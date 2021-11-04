@@ -12,6 +12,7 @@
 
 :root{
     --orange: #f78b00;
+    --orange2: #f86b2a;
     --blue: #00285f;
     --gray: #ededed;
     --blueTranparent: #00285f83; 
@@ -26,7 +27,7 @@ html, body{
 header{
     width: 100%;
     height: 500px;
-    background-color: var(--orange);
+    background-image: linear-gradient(to top, var(--orange), var(--orange2)) ;
 }
 
 .content{/*USANDO RESPONSIVIDAD*/
@@ -327,25 +328,25 @@ section .card-item{ /*ARRUMANDO CADA ITEM EM SI*/
     background: white;
     margin: 0 auto; /*para deixar tudo centralizado externamente*/
     border-radius: 8px;
-    z-index: 10;
+    z-index: 10; /*para ele não ficar atrás de nada*/
     padding: 50px;
     display: grid;
     grid-template-columns:  repeat(auto-fill, minmax(420px, 1fr));
-    grid-gap: 30px;
+    grid-gap: 30px; /*distancia entre os cards*/
 }
 
 .feature-card-item{
     max-width: 420px;
     height: 150px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    display: flex; /*para alinhar o itens internamente*/
+    flex-direction: row; /*para ficar na mesma linha*/
+    align-items: center; /*alinha na vertical*/
+    justify-content: space-around; /*alinha na horizontal*/
     border: 1px soid var(--gray);
     border-radius: 4px;
 }
 
-.future-text-content{
+.future-text-content{ /*H3 e o P*/
     max-width: 60%;
     margin: 5px;
 
@@ -359,3 +360,175 @@ section .card-item{ /*ARRUMANDO CADA ITEM EM SI*/
 
 
 /* Footer */
+
+footer{ /*Rodapé*/
+    width: 100%; /*Responsividade*/
+    height: 100%;
+}
+
+footer .main{ /*tudo menos a ultima div*/
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(to top, var(--orange), var(--orange2)) ;
+    padding: 20px 10px; /*20px encima e embaixo, 10px dos lados*/
+}
+
+.footer-links{ /*2º div do footer*/
+    max-width: 1000px;
+    min-width: 300px;
+    display: flex; /*para que as caixas possam ficar na mesma linha*/
+    flex-direction: row; /*Para que as caixas fiquem alinhadas em LINHA*/
+    justify-content: space-between; /*É uma linha com espaço entre os elementos*/
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.footer-company, 
+.footer-rental, 
+.footer-contact, 
+.footer-social{/*Feito para dar comando padrões para naõ ter que ficar repetindo os mesmo comando smepre*/
+    color: white;
+    height: 100%;
+    min-height: 100px;
+}
+
+.footer-rental h6, .footer-company h6{
+    cursor: pointer;
+}
+
+.footer-rental h6:hover, .footer-company h6:hover{
+    text-decoration: underline;
+}
+
+
+.footer-links h4{
+    margin-bottom: 10px;
+}
+
+.main .footer-social img{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+
+.main .footer-social img:hover{
+    transition: 0.6s ease;
+    width: 35px;
+    height: 35px;
+}
+
+
+footer .last {
+    width: 100%;
+    height: 50px;
+    background-color: var(--blue);
+    color: white;
+    display: flex;
+    align-items: center; /*está alinhado ao centro na veritica*/
+    justify-content: center; /*está alinhado ao centro na Horizontal*/
+} 
+
+
+/*Responsive adjustaments*/
+
+@media (max-width: 576px){ /*MEDIA QUERIES; tudo qye tiver até no maximo essa lagura terá estes códigos:*/
+    nav ul li {
+        display: none; /*não que que mostre os links e sim que o usuário araste para baixo*/
+      }
+    
+      .header-block img { /*imagem do carro amarelo*/
+        width: 70%;
+        position: absolute;
+        right: 16%; /*sendo 16% longem da direita*/
+        top: 30%; /*sendo 30% longem do topo*/
+      }
+    
+      .header-block .text {
+        position: absolute;
+        bottom: 10%; /*sendo 10% longem do chão*/
+        left: 15%;/*sendo 15% longem da direita*/
+      }
+    
+      section .filter-card { /*caixa onde esta o botão*/
+        width: 350px;
+        padding: 0px 10px; /* 0px encima e embraixo, 10px dos lados */
+      }
+    
+      .search-input { /*O input em si*/
+        max-width: 700px;
+        min-width: 240px;
+      }
+    
+      .search-button { /*Botão ao lado do input*/
+        max-width: 150px;
+        min-width: 80px;
+      }
+      .about {/*conteudo abaixo do CATÁLAGO*/
+        margin-top: 100px;
+      }
+    
+      .title-wrapper-about { /*DIV QUE CONTEM O h3 e o P*/
+        margin-bottom: 20px;
+      }
+      .about-content { /*div onde fica a imagem, os títulos e o texto*/
+        flex-direction: column; /*ficando em coluna agora*/
+        height: 100%; /*ocuoando uma altura de 100% da caixa*/
+      }
+      .left { /*a Imagem*/
+        display: none; /*NÇAO EXIBINDO A IMAGEM*/
+      }
+      .right { /*o tpitulo e o texto*/
+        width: 90%;
+      }
+    
+      .right p { 
+        width: 100%;
+        margin: 0px;
+        text-align: left; /*alinhando o texto a esquerda*/
+      }
+    
+      .features {/*é a section abixo do ultimo texto*/
+        height: 100%;
+      }
+    
+      .feature-card-block {/*Onde contem todas as 6 imagens e texts*/
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    
+      footer { /*rodapé*/
+        height: 100%;
+      }
+    
+      footer .main { /*contem tudo menos a ultima linha*/
+        height: 15%;
+      }
+    
+      .footer-links { /*contem tudo menos a ultima linha*/
+        padding-left: 10%;
+        display: flex;
+        flex-direction: row;
+        grid-template-columns:  repeat(auto-fill, minmax(420px, 1fr));
+        grid-gap: 30px; /*distancia entre os cards*/
+        justify-content: space-evenly; /*deixa a caixa no centro*/
+        font-size: 0.6em;
+      } 
+
+      .main .footer-social img{ /*diminuir tamanho da imagem das redes sociais*/
+        width: 40%;
+        height: 40%;
+      }
+
+      footer .main h4{ /*letra h4 da ultima div*/
+          font-weight: bold;
+      }
+
+      footer .main h6{/*letra h6 da ultima div*/
+        font-size: 1em;
+        font-weight: lighter;
+    }
+      
+}
