@@ -1,0 +1,361 @@
+@charset "UFT-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap'); /*import de fontes do google*/
+
+*{/*fazendo isso para rezetar os comando  padrôes*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --orange: #f78b00;
+    --blue: #00285f;
+    --gray: #ededed;
+    --blueTranparent: #00285f83; 
+}
+
+html, body{
+    width: 100%; /*para que tenha uma largura de no maximo 100%*/
+    overflow-x: hidden; /*para que não tenha uma barra de rolagem da horizontal*/
+    /* overflow-y: hidden;  para que não tenha barra de rolagem na vertical */
+}
+
+header{
+    width: 100%;
+    height: 500px;
+    background-color: var(--orange);
+}
+
+.content{/*USANDO RESPONSIVIDAD*/
+    max-width: 1000px; /*não definindo um limite, e simfalando que se tiver espaço, o maior que ele chegará é 1000px*/
+    min-width: 300px; /*se não tiver espaço, ele sera de no maximo 300px, usado para a RESPONSIVIDADE*/
+    margin: 0 auto; /*para alinhas as coisas ao centro*/
+    display: flex;
+    flex-direction: column; /*para os itens todos ficarem em coluna*/
+    padding: 10px;
+}
+
+nav{/*MEU MENU*/
+    width: 100%;
+    height: 125px;
+    display: flex; /*para que as caixas fiquem na mesma linha*/
+    flex-direction: row; /*para os itens todos ficarem em LINHA*/
+    align-items: center; /*alinhando ao cento*/
+    justify-content: space-between;
+}
+
+.brand{ /*nome dev superior*/
+    font-size: 24px;
+    color: var(--blue);
+    cursor: pointer; /*para quando o mouse passar por cima, saber que é clicavel*/
+}
+
+nav ul{ /*Lista*/
+    display: flex;
+    flex-direction: row; /*para forçar que fiquem em linha, na mesma linha*/
+}
+
+nav ul li{
+    list-style: none; /*TIRAR as bolinhas dos itens da lista*/
+    padding: 10px;
+    cursor: pointer; /*Ficando uma mãozinha o curso quando apssar por cima das palavras*/
+}
+nav ul li a{ /*links dentro de nav, lista, dento dos itens da lista*/
+    color: var(--blue);
+    text-decoration: none; /*tirando o underline das letras*/
+}
+
+nav ul li a:hover{ /*quando o mouse passar por cima, ele fara:*/
+    color: var(--blueTranparent);
+    text-decoration: underline; 
+}
+
+nav ul button{
+    border: 1px solid var(--blue); /*dando espeçura, tipo e cor apenas para as bordas*/
+    background-color: transparent; /*cor transparente, peando a cor de fundo*/
+    padding: 8px 40px;
+    cursor: pointer;/*Ficando uma mãozinha o curso quando apssar por cima das palavras*/
+    margin-left: 30px; /*dando um espaço dos "a's"*/
+    color: var(--blue);
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+nav ul button:hover{
+    transition: color 0.6s ; /*Fazendo uma trasição de cor, para que fique mais suave*/
+    background-color: var(--blue);
+    color: white;
+}
+
+.content .header-block{ /*RESPONSIVIDADE*/
+    max-width: 1000px;
+    min-width: 300px;
+    height: 450px;
+    background-color: var(--blue);
+    border-radius: 8px;
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);/*para garantir que isso se aplique a todos os navegadores eu coloco:*/
+    -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5); 
+    -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+
+    position: relative;
+    z-index: 10;
+    padding: 10px;
+}
+
+.header-block img{ /*Tratando a IMAGEM DO CARRO*/
+    width: 50%; /*dando uma largura de 50% do seu antigo tamanho original*/
+    position: absolute;
+    right: 2%; /*ela ficará 2% longem do lado direito*/
+    bottom: 2%; /*ela ficará 2% longem do CHÃO da div*/
+}
+
+.header-block .text{
+    position: absolute;
+    bottom: 30%;
+    left: 15%;
+}
+
+.header-block .text h2{
+    color: white;
+    margin-bottom: 20px;
+    text-align: right;
+    transform: translateX(-20px); /*Fazndeo o H2 se mover -20px na horixontal(linha X)*/
+    transition: transform 0.5s; /*tendo uma transição de 0.5s do H2*/
+}
+
+.header-block .text p{
+    max-width: 280px;
+    color: white;
+    text-align: right;
+    transform: translateX(-20px); /*Fazndeo o H2 se mover -20px na horixontal(linha X)*/
+    transition: transform 0.4s; /*tendo uma transição de 0.5s do H2*/
+}
+
+
+/*Product Catalog*/
+
+section .catalog{/**/
+    width: 100vw;
+    padding: 100px;
+}
+
+section .filter-card{/**/
+    width: 980px;
+    height: 150px;
+    background-color: var(--gray);
+    border-radius: 8px; /*arredondando as bordas*/
+    margin: 0 auto;
+    display: flex; /*deixando as caixas quebrarem para outras linhas*/
+    flex-direction: row; /*deixando as caixas em linha*/
+    align-items: center; /*deixa os itens no centro*/
+    justify-content: center; /*deixa a caixa no centro*/
+}
+
+.search-input{/**/
+    width: 700px;
+    height: 50px;
+    border: none; /*tirando a bordar*/
+    border-radius: 4px 0px 0px 4px; /*4 para o topo do lado esquerdo; 0 para o topo do lado direito; 0 para o inferior do lado direito; 4 para o inferior do lado esquerdo;*/
+    text-indent:10px; /*para o texto RECUAR 10px*/
+}
+
+.search-button{ /*o botão em si*/
+    width: 150px;
+    height: 50px;
+    border-radius: 0px 4px 4px 0px;/*agora arredondando para o lado contrário*/
+    border: none; /*tirando a bordar*/
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1em ease; /*Dando o tamanho do texto e uma facilidade, diminuindo um pouco ele*/
+}
+
+.search-button:hover{/*interação do botão*/
+    background-color: var(--gray);
+    color: var(--blue);
+}
+
+.title-wrapper-catalog{/*nome encima do botão*/
+    margin-top: 200px;
+    padding-bottom: 20px;
+}
+
+section .card-wrapper{ /*arrumando a caixa, tudo que está dentro da div, que são os itens do catálogo*/
+    max-width: 1000px; /*largura maxima*/
+    height: 100%; /*para ele ocupar o quando der*/
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-gap: 30px; /*para dar espaço dos itens do meu GRID*/
+    padding-top: 50px;
+}
+
+section .card-item{ /*ARRUMANDO CADA ITEM EM SI*/
+    height: 400px;
+    background: var(--gray);
+    border-radius: 8px;
+    display: flex; /*para arrumar cada coisa dentro do card-item individualmente*/
+    flex-direction: column; /*deixando eles em coluna, de cima para baixo*/
+    align-items: center; /*para centralizar o conteudo*/
+    justify-content: space-around; /*para dar espaço entre os elemnetos e as bordas dele*/
+}
+
+.card-content{ /*texto e os botões*/
+    height: 40%;
+    display: flex;/*para arrumar cada coisa dentro do card-item individualmente, os textos e o botão*/
+    flex-direction: column; /*para ficar tudo um do lado do outro*/
+    align-items: center; /*Alinhando tudo ao centro*/
+    justify-content: space-around; /*para dar espaço entre os elemnetos e as bordas dele*/
+}
+
+.card-item img{/*arrumando a imagem*/
+    width: 85%;/*tendo 85% do seu tamanho original*/
+}
+
+.card-item h3{
+    width: 90%;
+}
+
+.card-item p{
+    width: 90%;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.70);
+}
+
+.card-item button{ /*arrumando o BOTÃO*/
+    width: 90%;/*tendo 90% do seu tamanho original*/
+    padding: 15px 0px; /*15px encima e embaixo, e 0px dos lados*/
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.card-item button:hover{
+    background: var(--gray);
+    color: var(--blue);
+}
+
+
+/*ABOUT*/
+
+.bout{ /*é toda a parte debaixo, a section about*/
+    width: 100%; /*Para que ocupe a largura maxima*/
+    height: 100%;/*Para que ocupe a altura maxima*/
+    display: flex;/*Para que possamos alinhas os itens internamente*/
+    /* flex-direction: column;      quando não passo uma flex direction, ela automaticamente é COLUMN */
+    align-items: center;/*alinhando tudo ao centro horizoltalmente*/
+    justify-content: center;/*alinhando tudo ao centro verticalmente*/
+    padding: 50px 10px;
+}
+
+.about-content{ /*é a imagem é o segundo h3 com lorem em seguida*/
+    max-width: 1000px;
+    min-width: 300px;
+    height: 600px;
+    background-color: var(--gray);
+    margin: 0 auto;
+    border-radius: 8px;
+    z-index: 10; /*para quando eu quero que esse objeto/elemento fique acima de qualuer outro elemento que possa surgir*/
+    padding: 10px;
+    display: flex; /*para que as caixar possam ficar na mesma linha*/
+    flex-direction: row;
+    align-items: center; /*Alinhando meu texto ao centro verticalmente*/
+    justify-content: space-between; /*Alinhando horizontalmente do itens*/
+}
+
+.left{ /*div que contem a imagem dentro*/
+    width: 25%;
+    min-width: 300px; /*para caso o conteudo seja RESPONSIVO*/
+    height: 100%;
+    background: #000000a1;
+    border-radius: 8px;
+}
+
+.right{ /*que é o h3 e o "p" com o lorem*/
+    width: 65%;
+    height: 100%;
+    display: flex; /*para poder alinhar ao centro*/
+    flex-direction: column;
+    align-items: flex-start; /*para que tudo fique alinahdo no começo*/
+    justify-content: flex-start; /*para que tudo fique alinahdo no começo*/
+    padding-top: 10%;
+}
+
+.right h3{
+    text-align: right;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.right p{
+    max-width: 90%;
+    font-size: 1em;
+    letter-spacing: 2px; /*espaço entre as letras*/
+    text-align: right; /*para se ajeitarem tudo a direita*/
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+/*Features*/
+
+.features{ /*3º section - trabalhando RESPONSIVIDADE*/
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray);
+    display: flex; /*para poder trabalhar as caixas na mesma linha*/
+    align-items: center; /*alinahndo os itens ao centro*/
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+.title-wrapper-features{ /*P e o H3*/
+    padding: 20px 0px;
+}
+
+.feature-card-block{/*estilizando os cards*/
+    max-width: 1000px;
+    min-width: 300px;
+    height: 600px;
+    background: white;
+    margin: 0 auto; /*para deixar tudo centralizado externamente*/
+    border-radius: 8px;
+    z-index: 10;
+    padding: 50px;
+    display: grid;
+    grid-template-columns:  repeat(auto-fill, minmax(420px, 1fr));
+    grid-gap: 30px;
+}
+
+.feature-card-item{
+    max-width: 420px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px soid var(--gray);
+    border-radius: 4px;
+}
+
+.future-text-content{
+    max-width: 60%;
+    margin: 5px;
+
+}
+
+.feature-card-item img{ /*as imagens*/
+    width: 64px; /*largura da imagem*/
+    height: 64px; /*altura da imagem*/
+    margin-right: 8px;
+}
+
+
+/* Footer */
