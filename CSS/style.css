@@ -188,7 +188,11 @@ section .card-wrapper{ /*arrumando a caixa, tudo que está dentro da div, que s�
     max-width: 1000px; /*largura maxima*/
     height: 100%; /*para ele ocupar o quando der*/
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    /* grid-template-columns: 200px repeat(auto-fill, 100px) 300px; */
+    /* grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); */
+    /* grid-template-columns: [linename1] 100px [linename2]; */
+    grid-template-columns: repeat(3, 200px);
+   
     grid-gap: 30px; /*para dar espaço dos itens do meu GRID*/
     padding-top: 50px;
 }
