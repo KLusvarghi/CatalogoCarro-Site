@@ -30,8 +30,13 @@ header{
     background-image: linear-gradient(to top, var(--orange), var(--orange2)) ;
 }
 
+
+
+
+
+/*PRIMEIRA DIV DO HEADER*/
 .content{/*USANDO RESPONSIVIDAD*/
-    max-width: 1000px; /*não definindo um limite, e simfalando que se tiver espaço, o maior que ele chegará é 1000px*/
+    max-width: 1000px; /*não definindo um limite, e simfalando que se tiver espaço, o maior que ele chegará é 1000px   RESPONSIVIDADE*/
     min-width: 300px; /*se não tiver espaço, ele sera de no maximo 300px, usado para a RESPONSIVIDADE*/
     margin: 0 auto; /*para alinhas as coisas ao centro*/
     display: flex;
@@ -91,12 +96,15 @@ nav ul button:hover{
     color: white;
 }
 
+
+
+/*SEFUNDA DIV DO HEADER*/
 .content .header-block{ /*RESPONSIVIDADE*/
     max-width: 1000px;
     min-width: 300px;
     height: 450px;
     background-color: var(--blue);
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);/*para garantir que isso se aplique a todos os navegadores eu coloco:*/
     -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5); 
     -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
@@ -195,6 +203,7 @@ section .card-wrapper{ /*arrumando a caixa, tudo que está dentro da div, que s�
    
     grid-gap: 30px; /*para dar espaço dos itens do meu GRID*/
     padding-top: 50px;
+    margin: auto;
 }
 
 section .card-item{ /*ARRUMANDO CADA ITEM EM SI*/
