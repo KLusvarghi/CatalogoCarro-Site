@@ -214,6 +214,7 @@ section .card-item{ /*ARRUMANDO CADA ITEM EM SI*/
     flex-direction: column; /*deixando eles em coluna, de cima para baixo*/
     align-items: center; /*para centralizar o conteudo*/
     justify-content: space-around; /*para dar espaço entre os elemnetos e as bordas dele*/
+    flex-wrap: wrap;
 }
 
 .card-content{ /*texto e os botões*/
